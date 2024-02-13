@@ -44,3 +44,22 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Running Requirements
+
+Run B/E server and take b/e url and put in .env file
+Use Npm command (npm run start) to run this on development env
+
+## Third Party Libraries Used
+
+### For APIs Call
+
+Axios
+
+### For Ui
+
+Tailwind CSS
+
+### For Form
+
+React Hook Form
