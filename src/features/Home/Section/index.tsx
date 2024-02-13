@@ -52,7 +52,7 @@ const Section = () => {
   });
 
   const getFormValues = useCallback(
-    (apiDeclaration: ApiDeclaration) =>
+    (apiDeclaration: ApiDeclaration = {}) =>
       Object.values(apiDeclaration).reduce(
         (acc, curr) => ({ ...acc, [curr.key]: curr.amount }),
         {}
@@ -61,7 +61,7 @@ const Section = () => {
   );
 
   const manipulateDeclaration = useCallback(
-    (apiDeclaration: ApiDeclaration) =>
+    (apiDeclaration: ApiDeclaration = {}) =>
       Object.values(apiDeclaration).reduce<ResultDeclaration>((acc, curr) => {
         const { section, ...rest } = curr;
 
@@ -83,7 +83,7 @@ const Section = () => {
       const data = await fetcher()
         .get<ApiDeclaration>("/assignment/declarations")
         .then((res) => res)
-        .catch((err) => err);
+        .catch((err) => console.log(err));
 
       reset(getFormValues(data?.data));
 
